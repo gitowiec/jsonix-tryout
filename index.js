@@ -1,6 +1,6 @@
 const Jsonix = require('jsonix').Jsonix;
 // import * as Jsonix from 'jsonix';
-const JPK = require('./mappings/JPK');
+const JPK = require('./mappings/JPK').JPK;
 // import {JPK} from './mappings/JPK'
 // console.log(JPK);
 /**
@@ -27,56 +27,63 @@ const JPK = require('./mappings/JPK');
 
 
 const value = {
-    Naglowek: {},
-    Podmiot1: {
-        IdentyfikatorPodmiotu: {
-            NIP       : 3213213213,
-            PelnaNazwa: 'dsadas adas Z dsadsa dsadsad',
-            REGON     : 32123213333
+    naglowek: {},
+    podmiot1: {
+        identyfikatorPodmiotu: {
+            nip       : "3213213213",
+            pelnaNazwa: "dsadas adas Z dsadsa dsadsad",
+            regon     : "32123213333"
         },
-        AdresPodmiotu        : {
-            KodKraju: 'PL'
+        adresPodmiotu        : {
+            kodKraju: 'PL'
         }
     },
-    Faktura : [
+    faktura : [
         {
-            "P_1"          : "2018-01-12",
-            "P_2A"         : "FV SP / 198 / 01 / 2018",
-            "P_3A"         : "rewrwer erwerw-r  rew",
-            "P_3B"         : "dsfdsfgfdh dfsfds f sdfds",
-            "P_3C"         : "zzzzzz",
-            "P_3D"         : "eeeee",
-            "P_4B"         : "1232132133",
-            "P_5B"         : "1232132133",
-            "P_6"          : "2018-01-10",
-            "P_13_1"       : "5316.00",
-            "P_14_1"       : "1222.68",
-            "P_13_2"       : "0.00",
-            "P_14_2"       : "0.00",
-            "P_13_3"       : "0.00",
-            "P_14_3"       : "0.00",
-            "P_13_5"       : "0.00",
-            "P_14_5"       : "0.00",
-            "P_13_6"       : "0.00",
-            "P_13_7"       : "0.00",
-            "P_15"         : "6538.68",
-            "P_16"         : "false",
-            "P_17"         : "false",
-            "P_18"         : "false",
-            "P_19"         : "false",
-            "P_20"         : "false",
-            "P_21"         : "false",
-            "P_23"         : "false",
-            "P_106E_2"     : "false",
-            "P_106E_3"     : "false",
-            "RodzajFaktury": "VAT"
+            "p1"          : "2018-01-12",
+            "p2A"         : "FV SP / 198 / 01 / 2018",
+            "p3A"         : "rewrwer erwerw-r  rew",
+            "p3B"         : "dsfdsfgfdh dfsfds f sdfds",
+            "p3C"         : "zzzzzz",
+            "p3D"         : "eeeee",
+            "p4B"         : "1232132133",
+            "p5B"         : "1232132133",
+            "p6"          : "2018-01-10",
+            "p131"        : "5316.00",
+            "p141"        : "1222.68",
+            "p132"        : "0.00",
+            "p142"        : "0.00",
+            "p133"        : "0.00",
+            "p143"        : "0.00",
+            "p135"        : "0.00",
+            "p145"        : "0.00",
+            "p136"        : "0.00",
+            "p137"        : "0.00",
+            "p15"         : "6538.68",
+            "p16"         : "false",
+            "p17"         : "false",
+            "p18"         : "false",
+            "p19"         : "false",
+            "p20"         : "false",
+            "p21"         : "false",
+            "p23"         : "false",
+            "p106E2"      : "false",
+            "p106E3"      : "false",
+            "rodzajFaktury": "VAT"
         }
     ]
 }
 
-const context = new Jsonix.Context([JPK]);
+const context = new Jsonix.Context([JPK], {
+    namespacePrefixes: {
+        "http://jpk.mf.gov.pl/wzor/2016/03/09/03095/": "",
+        "http://crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy/": "ns2"
+    }
+});
 
 const marshaller = context.createMarshaller();
-const doc = marshaller.marshalDocument({
-    JPK: {}
+
+const result = marshaller.marshalString({
+    JPK: value
 });
+console.log(result);
