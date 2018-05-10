@@ -84,7 +84,6 @@ const context = new Jsonix.Context([JPK], {
 const marshaller = context.createMarshaller();
 
 const result = marshaller.marshalString({
-    name: "JPK",
-    value: value
+    JPK: value
 });
 console.log(result);
