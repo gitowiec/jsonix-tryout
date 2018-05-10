@@ -30,45 +30,45 @@ const value = {
     Naglowek: {},
     Podmiot1: {
         IdentyfikatorPodmiotu: {
-            NIP: 9571059818,
+            NIP       : 3213213213,
             PelnaNazwa: 'dsadas adas Z dsadsa dsadsad',
-            REGON: 221512660
+            REGON     : 32123213333
         },
-        AdresPodmiotu: {
+        AdresPodmiotu        : {
             KodKraju: 'PL'
         }
     },
-    Faktura: [
+    Faktura : [
         {
-            "P_1": "2018-01-12",
-            "P_2A": "FV SP / 198 / 01 / 2018",
-            "P_3A": "rewrwer erwerw-r  rew",
-            "P_3B": "dsfdsfgfdh dfsfds f sdfds",
-            "P_3C": "zzzzzz",
-            "P_3D": "eeeee",
-            "P_4B": "1232132133",
-            "P_5B": "1232132133",
-            "P_6": "2018-01-10",
-            "P_13_1": "5316.00",
-            "P_14_1": "1222.68",
-            "P_13_2": "0.00",
-            "P_14_2": "0.00",
-            "P_13_3": "0.00",
-            "P_14_3": "0.00",
-            "P_13_5": "0.00",
-            "P_14_5": "0.00",
-            "P_13_6": "0.00",
-            "P_13_7": "0.00",
-            "P_15": "6538.68",
-            "P_16": "false",
-            "P_17": "false",
-            "P_18": "false",
-            "P_19": "false",
-            "P_20": "false",
-            "P_21": "false",
-            "P_23": "false",
-            "P_106E_2": "false",
-            "P_106E_3": "false",
+            "P_1"          : "2018-01-12",
+            "P_2A"         : "FV SP / 198 / 01 / 2018",
+            "P_3A"         : "rewrwer erwerw-r  rew",
+            "P_3B"         : "dsfdsfgfdh dfsfds f sdfds",
+            "P_3C"         : "zzzzzz",
+            "P_3D"         : "eeeee",
+            "P_4B"         : "1232132133",
+            "P_5B"         : "1232132133",
+            "P_6"          : "2018-01-10",
+            "P_13_1"       : "5316.00",
+            "P_14_1"       : "1222.68",
+            "P_13_2"       : "0.00",
+            "P_14_2"       : "0.00",
+            "P_13_3"       : "0.00",
+            "P_14_3"       : "0.00",
+            "P_13_5"       : "0.00",
+            "P_14_5"       : "0.00",
+            "P_13_6"       : "0.00",
+            "P_13_7"       : "0.00",
+            "P_15"         : "6538.68",
+            "P_16"         : "false",
+            "P_17"         : "false",
+            "P_18"         : "false",
+            "P_19"         : "false",
+            "P_20"         : "false",
+            "P_21"         : "false",
+            "P_23"         : "false",
+            "P_106E_2"     : "false",
+            "P_106E_3"     : "false",
             "RodzajFaktury": "VAT"
         }
     ]
@@ -78,7 +78,5 @@ const context = new Jsonix.Context([JPK]);
 
 const marshaller = context.createMarshaller();
 const doc = marshaller.marshalDocument({
-    JPK:{
-        namespace:'http:\/\/jpk.mf.gov.pl\/wzor\/2016\/03\/09\/03095\/'3
-    }
+    JPK: {}
 });
