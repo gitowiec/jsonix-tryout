@@ -1,13 +1,8 @@
-const Jsonix = require('jsonix').Jsonix;
-// import * as Jsonix from 'jsonix';
-const JPK = require('./mappings/JPK').JPK;
-// import {JPK} from './mappings/JPK'
-// console.log(JPK);
-// import {} from './xmlns/xml-primitives';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Jsonix = require('jsonix').Jsonix;
+var JPK = require('./mappings/JPK').JPK;
 var format = require('xml-formatter');
-// import * as KodyCECHKRAJOW from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2013/05/23/eD/KodyCECHKRAJOW';
-// import * as DefinicjeTypy from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy';
-// import {JPKType} from './xmlns/http/jpk.mf.gov.pl/wzor/2016/03/09/03095';
 // JPKTypy.
 /**
  *
@@ -26,7 +21,8 @@ var format = require('xml-formatter');
  * java --add-modules java.xml.bind -jar node_modules/jsonix/lib/jsonix-schema-compiler-full.jar -d mappings -p JPK Schemat_JPK_FA\(1\)_v1-0.xsd -b bindings.xjb
  *
  */
-const value = {
+// console.log(JPK);
+var value = {
     naglowek: {},
     podmiot1: {
         identyfikatorPodmiotu: {
@@ -73,14 +69,14 @@ const value = {
         }
     ]
 };
-const context = new Jsonix.Context([JPK], {
+var context = new Jsonix.Context([JPK], {
     namespacePrefixes: {
         "http://jpk.mf.gov.pl/wzor/2016/03/09/03095/": "",
         "http://crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy/": "ns2"
     }
 });
-const marshaller = context.createMarshaller();
-const result = marshaller.marshalString({
+var marshaller = context.createMarshaller();
+var result = marshaller.marshalString({
     JPK: value
 });
 console.log(format(result));

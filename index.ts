@@ -1,14 +1,10 @@
 const Jsonix = require('jsonix').Jsonix;
-// import * as Jsonix from 'jsonix';
 const JPK = require('./mappings/JPK').JPK;
-// import {JPK} from './mappings/JPK'
-// console.log(JPK);
-// import {} from './xmlns/xml-primitives';
 var format = require('xml-formatter');
 
-// import * as KodyCECHKRAJOW from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2013/05/23/eD/KodyCECHKRAJOW';
-// import * as DefinicjeTypy from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy';
-// import {JPKType} from './xmlns/http/jpk.mf.gov.pl/wzor/2016/03/09/03095';
+import * as KodyCECHKRAJOW from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2013/05/23/eD/KodyCECHKRAJOW';
+import * as DefinicjeTypy from './xmlns/http/crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy';
+import {JPKType} from './xmlns/http/jpk.mf.gov.pl/wzor/2016/03/09/03095';
 
 // JPKTypy.
 /**
@@ -30,6 +26,7 @@ var format = require('xml-formatter');
  */
 
 
+// console.log(JPK);
 
 
 
