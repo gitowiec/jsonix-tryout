@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Jsonix = require('jsonix').Jsonix;
-var JPK = require('./mappings/JPK').JPK;
+const Jsonix = require('jsonix').Jsonix;
+const JPK = require('./mappings/JPK').JPK;
 var format = require('xml-formatter');
 // JPKTypy.
 /**
@@ -22,7 +22,7 @@ var format = require('xml-formatter');
  *
  */
 // console.log(JPK);
-var value = {
+const value = {
     naglowek: {},
     podmiot1: {
         identyfikatorPodmiotu: {
@@ -69,14 +69,14 @@ var value = {
         }
     ]
 };
-var context = new Jsonix.Context([JPK], {
+const context = new Jsonix.Context([JPK], {
     namespacePrefixes: {
         "http://jpk.mf.gov.pl/wzor/2016/03/09/03095/": "",
         "http://crd.gov.pl/xml/schematy/dziedzinowe/mf/2016/01/25/eD/DefinicjeTypy/": "ns2"
     }
 });
-var marshaller = context.createMarshaller();
-var result = marshaller.marshalString({
+const marshaller = context.createMarshaller();
+const result = marshaller.marshalString({
     JPK: value
 });
 console.log(format(result));
