@@ -1,5 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+class KodFormularza {
+}
+const kod = new KodFormularza();
 const Naglowek = {
     DataDo: new Date(),
     DataOd: new Date(),
@@ -7,10 +10,7 @@ const Naglowek = {
     WariantFormularza: 1,
     DataWytworzeniaJPK: new Date(),
     DomyslnyKodWaluty: "PLN",
-    KodFormularza: {
-        content: "JPK_FA",
-        kodSystemowy: 
-    }
+    KodFormularza
 };
 const JPK = {
     Naglowek
